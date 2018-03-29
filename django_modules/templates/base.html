@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Base</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="alternate" title="Pozolería RSS" type="application/rss+xml" href="/feed.rss" />
+  <link href="{% static "home/css/base.css" %}" rel="stylesheet">
+</head>
+<body>
+  <header>
+     <label><h2>LOGO</h2></label>
+  </header>
+  <main>
+    <div class="Menu">
+      <nav>
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'reportsview' %}">Reportes</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="Contenido">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </main>    
+  <footer></footer>
+</body>
+</html>

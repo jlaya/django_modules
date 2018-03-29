@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_modules.home',
+    'django_modules.reports',
 ]
 
 THIRD_PARTY_APPS = (
@@ -55,7 +57,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'django_modules.urls'
 
 TEMPLATES = [
-    {
+    { 
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
@@ -69,6 +71,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'django_modules.wsgi.application'
 
@@ -118,3 +121,7 @@ STATIC_URL = '/static/'
 # MEDIA_URL = '/media/'
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Configuraciones de modulos instalados
+
+WKHTMLTOPDF_CMD = '/usr/local/bin/wkhtmltopdf'

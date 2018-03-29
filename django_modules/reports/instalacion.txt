@@ -1,0 +1,18 @@
+pip install django-wkhtmltopdf
+
+sudo apt-get install wkhtmltopdf
+
+descargar el ejecutable
+
+wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+tar xvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz 
+sudo mv wkhtmltox/bin/wkhtmlto* /usr/local/bin
+
+
+añadir la ruta absoluta del binario en el settigs.py
+
+WKHTMLTOPDF_CMD = '/usr/local/bin/wkhtmltopdf'
+
+se debe de tener el STATIC_ROOT configurado
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
