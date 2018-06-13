@@ -13,6 +13,7 @@ class ReportsView(TemplateView):
 class Wkhtmltopdf(PDFTemplateView):
     filename = 'wkhtmltopdf.pdf'
     template_name = 'reports/wkhtmltopdf.html'
+    footer_template = 'reports/footer.html'
     cmd_options = {
         'margin-top': 3,
     }
