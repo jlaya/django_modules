@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_modules.home',
     'django_modules.reports',
+    'rest_framework',
+    'django_modules.apis',
 ]
 
 THIRD_PARTY_APPS = (

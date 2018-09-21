@@ -21,6 +21,7 @@ from django.conf.urls import include, url
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include('django_modules.home.urls')),
-    url(r'^', include('django_modules.reports.urls')),   
+    url(r'^', include('django_modules.reports.urls')),
+    url(r'^', include('django_modules.apis.urls')),   
 
 ]

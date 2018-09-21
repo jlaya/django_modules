@@ -11,3 +11,4 @@ __pycache__/
 *testdb
 *db.sqlite3
 *settings.py
+**/migrations/**
