@@ -7,7 +7,11 @@ from rest_framework.generics import CreateAPIView
 from rest_framework.generics import UpdateAPIView
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.generics import DestroyAPIView
+from django.views.generic import TemplateView
 
+
+class ApisView(TemplateView):
+    template_name = "apis/apis.html"
 
 class ProductsListAPI(ListAPIView):
     queryset = Products.objects.all()

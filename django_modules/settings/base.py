@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django_modules.reports',
     'rest_framework',
     'django_modules.apis',
+    'django_modules.crud',
 ]
 
 THIRD_PARTY_APPS = (
