@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_modules.apis',
     'django_modules.crud',
+    'django_modules.userextend',
 ]
 
 THIRD_PARTY_APPS = (
@@ -128,3 +129,7 @@ STATIC_URL = '/static/'
 # Configuraciones de modulos instalados
 
 WKHTMLTOPDF_CMD = '/usr/local/bin/wkhtmltopdf'
+
+#metodo1: AbstractUser
+
+#AUTH_USER_MODEL = 'userextend.User'
