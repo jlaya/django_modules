@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_modules.apis',
     'django_modules.crud',
-    'django_modules.userextend',
+    #'django_modules.userextend',
 ]
 
 THIRD_PARTY_APPS = (

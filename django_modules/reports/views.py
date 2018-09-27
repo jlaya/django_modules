@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 from wkhtmltopdf.views import PDFTemplateView
-from django_modules.home.models import Products
+from django_modules.apis.models import Products
 # from django.views.generic.detail import SingleObjectMixin
 # from django.views.generic import View
 # from wkhtmltopdf.views import PDFTemplateResponse

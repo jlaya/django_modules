@@ -1,8 +1,8 @@
 from django.contrib import admin
-from django_modules.home.models import Products
+# from django_modules.home.models import Products
 
 
-class ProductsAdmin(admin.ModelAdmin):
-    pass
+# class ProductsAdmin(admin.ModelAdmin):
+#     pass
     
-admin.site.register(Products, ProductsAdmin)
+# admin.site.register(Products, ProductsAdmin)
