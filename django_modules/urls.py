@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^', include('django_modules.apis.urls')),
     url(r'^', include('django_modules.crud.urls')),
     url(r'^', include('django_modules.login.urls')),
+    url(r'^', include('django_modules.emails.urls')),
 
 ]

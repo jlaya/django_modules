@@ -50,16 +50,18 @@ main {
 </head>
 <body>
   <header>
-     <label><h2>LOGO</h2></label>
+     <label><h2><a href="{% url 'view_logout' %}">Logout</a></h2></label>
   </header>
   <main>
     <div class="Menu">
       <nav>
         <ul>
-          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="{% url 'reportsview' %}">Reportes</a></li>
           <li><a href="{% url 'apis' %}">Apis</a></li>
           <li><a href="{% url 'list_course' %}">CRUD con ClassView</a></li>
+          <li><a href="{% url 'view_send_mail' %}">Email</a></li>
+
         </ul>
       </nav>
     </div>

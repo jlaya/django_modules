@@ -133,3 +133,15 @@ WKHTMLTOPDF_CMD = '/usr/local/bin/wkhtmltopdf'
 #metodo1: AbstractUser
 
 #AUTH_USER_MODEL = 'userextend.User'
+
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 5,
+    'MARGIN_PAGES_DISPLAYED': 2,
+}
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'victormagallanes2@gmail.com'
+EMAIL_HOST_PASSWORD = '181652981987181652981987'

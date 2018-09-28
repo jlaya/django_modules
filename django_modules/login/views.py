@@ -8,7 +8,7 @@ from django.views.generic import FormView, RedirectView
 class LoginView(FormView):
     form_class = AuthenticationForm
     template_name = "login/login.html"
-    success_url = reverse_lazy("index")
+    success_url = reverse_lazy("home")
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
@@ -22,9 +22,6 @@ class LoginView(FormView):
 
 
 class LogoutView(RedirectView):
-    """
-    Provides users the ability to logout
-    """
     url = '/login/'
 
     def get(self, request, *args, **kwargs):
