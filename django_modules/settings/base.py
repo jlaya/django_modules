@@ -1,3 +1,5 @@
+from __future__ import absolute_import, unicode_literals
+
 """
 Django settings for django_modules project.
 
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_modules.apis',
     'django_modules.crud',
+    'django_modules.emails',
     #'django_modules.userextend',
 ]
 
@@ -139,9 +142,18 @@ PAGINATION_SETTINGS = {
     'MARGIN_PAGES_DISPLAYED': 2,
 }
 
-
+# Configuracion de correo
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'victormagallanes2@gmail.com'
 EMAIL_HOST_PASSWORD = '181652981987181652981987'
+
+
+# Configuracion de celery
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE
