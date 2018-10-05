@@ -1,0 +1,7 @@
+Instalar redis
+
+sudo apt-get install install redis-server
+
+Instalar memcached
+
+sudo apt-get install install memcached

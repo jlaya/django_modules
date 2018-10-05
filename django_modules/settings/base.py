@@ -1,5 +1,3 @@
-from __future__ import absolute_import, unicode_literals
-
 """
 Django settings for django_modules project.
 
@@ -42,11 +40,11 @@ INSTALLED_APPS = [
     'django_modules.apis',
     'django_modules.crud',
     'django_modules.emails',
-    #'django_modules.userextend',
+    # 'django_modules.userextend',
 ]
 
 THIRD_PARTY_APPS = (
- 
+
 )
 
 INSTALLED_APPS += THIRD_PARTY_APPS
@@ -64,7 +62,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'django_modules.urls'
 
 TEMPLATES = [
-    { 
+    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
@@ -133,9 +131,9 @@ STATIC_URL = '/static/'
 
 WKHTMLTOPDF_CMD = '/usr/local/bin/wkhtmltopdf'
 
-#metodo1: AbstractUser
+# metodo1: AbstractUser
 
-#AUTH_USER_MODEL = 'userextend.User'
+# AUTH_USER_MODEL = 'userextend.User'
 
 PAGINATION_SETTINGS = {
     'PAGE_RANGE_DISPLAYED': 5,
@@ -151,9 +149,34 @@ EMAIL_HOST_PASSWORD = '181652981987181652981987'
 
 
 # Configuracion de celery
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
-CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = TIME_ZONE
+# CELERY_BROKER_URL = 'redis://localhost:6379'
+# CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+# CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+# CELERY_TASK_SERIALIZER = 'json'
+# CELERY_RESULT_SERIALIZER = 'json'
+# CELERY_TIMEZONE = TIME_ZONE
+
+# Cache usando mencached
+# CACHES = {
+#     'default': {
+#     'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#     'LOCATION': '127.0.0.1:11211',
+#     }
+# }
+
+CACHES = {
+    'default': {
+        'BACKEND': 'redis_cache.RedisCache',
+        'LOCATION': 'localhost:6379',
+        'OPTIONS': {
+            'DB': 0,
+            'PASSWORD': '',
+            'PARSER_CLASS': 'redis.connection.HiredisParser',
+            'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
+            'CONNECTION_POOL_CLASS_KWARGS': {
+                'max_connections': 50,
+                'timeout': 20,
+            }
+        },
+    }
+}
