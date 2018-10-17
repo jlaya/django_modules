@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_modules.apis',
     'django_modules.crud',
     'django_modules.emails',
+    'django_modules.chart',
     # 'django_modules.userextend',
 ]
 

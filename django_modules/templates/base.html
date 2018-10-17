@@ -5,6 +5,8 @@
   <title>Base</title>
   <meta charset="utf-8" />
   <link href="{% static "css/base.css" %}" rel="stylesheet">
+  <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.9.0.min.css" type="text/css" />
+
   <style type="text/css">
   body {
   margin: 0;
@@ -62,6 +64,7 @@ main {
           <li><a href="{% url 'list_course' %}">CRUD con ClassView</a></li>
           <li><a href="{% url 'view_send_mail' %}">Email</a></li>
           <li><a href="{% url 'view_cache' %}">Vista Cacheada</a></li>
+          <li><a href="{% url 'chartlist_view' %}">Graficos</a></li>
         </ul>
       </nav>
     </div>
@@ -72,5 +75,7 @@ main {
     </div>
   </main>    
   <footer></footer>
+      <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-0.9.0.min.js"></script>
 </body>
+
 </html>

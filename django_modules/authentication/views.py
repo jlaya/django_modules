@@ -7,7 +7,7 @@ from django.views.generic import FormView, RedirectView
 
 class LoginView(FormView):
     form_class = AuthenticationForm
-    template_name = "login/login.html"
+    template_name = "authentication/login.html"
     success_url = reverse_lazy("home")
 
     def dispatch(self, request, *args, **kwargs):
