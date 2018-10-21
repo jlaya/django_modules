@@ -181,3 +181,6 @@ CACHES = {
         },
     }
 }
+
+# comando para correr elegir el settings a usar:
+# python manage.py runserver --settings=mysite.settings.local

@@ -3,19 +3,14 @@
 <h1>Graficos</h1>
 
 <p>
-    <a href="#">Agregar grafico</a>
+    <a href="{% url "chartcreate_view" %}"">Agregar grafico</a>
 </p>
 
 <ul>
     {% for chart in object_list %}
         <li>
-            <p>{{ chart.name }}</p>
-            <p>{{ chart.x_axis }}</p>
-            <p>{{ chart.y_axis }}</p>
+            <p><a href="{% url "chartdetail_view" chart.id %}">{{ chart.name }}</a></p>
         </li>
-    <iframe id="encoder_iframe" height=350 width=350 src="{% url 'chartdetail_view' chart.id%}"></iframe>
-
-
     {% endfor %}
 </ul>
 <center>

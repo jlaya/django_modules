@@ -1,5 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles %}
 {% block content %}
-	<h1>{{ chart.name }}</h1>
-	<p>Fecha de inicio: <i>{{ chart.start_date }}</i></p>
-	<p>Fecha de fin: <i>{{ chart.end_date }}</i></p>
+  <link href="{% static "css/bokeh-0.13.0.min.css" %}" rel="stylesheet">
+  <link href="{% static "css/bokeh-widgets-0.13.0.min.css" %}" rel="stylesheet">
+	<p>
+	    <a href="{% url "chartlist_view" %}">Regresar</a>
+	</p>
+  {{ div | safe }}
+
+  <script src="{% static "js/bokeh-0.13.0.min.js" %}"></script>
+  <script src="{% static "js/bokeh-widgets-0.13.0.min.js" %}"></script>
+  {{ script | safe }}
 {% endblock %}
