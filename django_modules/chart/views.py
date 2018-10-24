@@ -29,8 +29,8 @@ class ChartDetail(DetailView):
 
 
     def get_context_data(self, **kwargs):
-        valorx = Chart.objects.values_list('x_axis')
-        valory = Chart.objects.values_list('y_axis')
+        valorx = Chart.objects.values_list('x_axis').filter(pk=self.kwargs.get('pk'))
+        valory = Chart.objects.values_list('y_axis').filter(pk=self.kwargs.get('pk'))
         eje_x = list(valorx)
         eje_y = list(valory)
         x_axis = list(eje_x[0])
