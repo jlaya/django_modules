@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_modules.emails',
     'django_modules.chart',
     # 'django_modules.userextend',
+    'django_modules.inlineform'
 ]
 
 THIRD_PARTY_APPS = (
