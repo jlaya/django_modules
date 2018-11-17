@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Crear Factura</h1>
+<form method="post">
+    {% csrf_token %}
+      {{ form }}
+<br>
+<br>
+<br>
+<br>
+
+<h4>InlineProductA</h4> 
+      {{ ProductA.management_form }}
+      {{ ProductA }}
+<br>
+<br>
+<br>
+<h4>InlineProductB</h4>
+{{ ProductB.management_form }}
+{{ ProductB }}
+
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}
