@@ -26,6 +26,31 @@ class CreateInvoice(NamedFormsetsMixin, CreateWithInlinesView):
     success_url = reverse_lazy('home')
     inlines = [InlineProductA, InlineProductB]
     inlines_names = ['ProductA', 'ProductB']
+
+
+# class ChartCreate(CreateView):
+#     form_class = ChartCreateForm
+#     initial = {'key': 'value', 'type_chart': '1'}
+#     success_url = reverse_lazy('chartlist_view')
+#     template_name = 'chart/create.html'
+
+
+#     def get(self, request, *args, **kwargs):
+#         form = self.form_class(initial=self.initial)
+#         return render(request, self.template_name, {'form': form})
+
+#     def post(self, request, *args, **kwargs):
+#         form = self.form_class(request.POST)
+#         if form.is_valid():
+#             name = form.cleaned_data['name']
+#             type_chart = form.cleaned_data['type_chart']
+#             p = Chart()
+#             p.name = name
+#             p.type_chart = type_chart
+#             p.owner = request.user
+#             p.save()
+#             return HttpResponseRedirect('/')
+#         return render(request, self.template_name, {'form': form})    
     
 
 

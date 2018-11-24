@@ -29,5 +29,6 @@ urlpatterns = [
     url(r'^', include('django_modules.cache.urls')),
     url(r'^', include('django_modules.chart.urls')),
     url(r'^', include('django_modules.inlineform.urls')),
+    url(r'^', include('django_modules.usercustom.urls')),
 
 ]

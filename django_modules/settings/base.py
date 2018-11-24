@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django_modules.crud',
     'django_modules.emails',
     'django_modules.chart',
-    # 'django_modules.userextend',
+    'django_modules.usercustom',
     'django_modules.inlineform',
     'extra_views'
 ]
@@ -136,7 +136,7 @@ WKHTMLTOPDF_CMD = '/usr/local/bin/wkhtmltopdf'
 
 # metodo1: AbstractUser
 
-# AUTH_USER_MODEL = 'userextend.User'
+# AUTH_USER_MODEL = 'usercustom.User'
 
 PAGINATION_SETTINGS = {
     'PAGE_RANGE_DISPLAYED': 5,

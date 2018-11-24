@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Users</h1>
+<ul>
+    {% for user in object_list %}
+        <li>
+            <p>{{ user.username }}
+                <a href="{% url "change_password" user.id %}">Cambiar contraseña</a> | 
+            </p>
+        </li>
+    {% endfor %}
+</ul>
+<center>
+{% include "_pagination.html" %}
+</center>
+{% endblock %}
