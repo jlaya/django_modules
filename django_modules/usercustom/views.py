@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Dllustrate."""
+"""Vista."""
 from pure_pagination.mixins import PaginationMixin
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
@@ -15,13 +15,15 @@ from .forms import SingupForm
 
 
 class ProfileList(PaginationMixin, ListView):
+    """Modelo ProfileList."""
+
     template_name = 'usercustom/list.html'
     model = User
     paginate_by = 10
 
 
 class SingupView(CreateView):
-    """Dllustrate."""
+    """SingupView."""
 
     model = User
     form_class = SingupForm
@@ -29,12 +31,12 @@ class SingupView(CreateView):
     template_name = 'usercustom/singup.html'
 
     def get(self, request, *args, **kwargs):
-        """Dllustrate."""
+        """get."""
         form = self.form_class(initial=self.initial)
         return render(request, self.template_name, {'form': form})
 
     def post(self, request, *args, **kwargs):
-        """Dllustrate."""
+        """post."""
         form = self.form_class(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
@@ -55,7 +57,7 @@ class SingupView(CreateView):
 
 
 class ProfileDetail(DetailView):
-    """Dllustrate."""
+    """ProfileDetail."""
 
     template_name = 'usercustom/detail.html'
     model = User
@@ -63,19 +65,19 @@ class ProfileDetail(DetailView):
 
 
 class ProfileUpdate(UpdateView):
-    """Dllustrate."""
+    """ProfileUpdate."""
 
     template_name = 'usercustom/update.html'
     model = User
     fields = ['username', 'first_name', 'last_name', 'email']
 
     def get_success_url(self):
-        """Dllustrate."""
+        """get_success_url."""
         return reverse('view_profiledetail', kwargs={'pk': self.object.pk})
 
 
 class ProfileDelete(DeleteView):
-    """Dllustrate."""
+    """ProfileDelete."""
 
     template_name = 'usercustom/delete.html'
     model = User
