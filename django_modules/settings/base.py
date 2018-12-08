@@ -43,8 +43,23 @@ INSTALLED_APPS = [
     'django_modules.chart',
     'django_modules.usercustom',
     'django_modules.inlineform',
-    'extra_views'
+    'extra_views',
+    # django-registration-redux
+
+    'django.contrib.sites',
+    'registration',
 ]
+
+# If you don't have a site defined in your database and django wants to reference it, you will need to create one.
+
+# From a python manage.py shell :
+
+# from django.contrib.sites.models import Site
+# new_site = Site.objects.create(domain='foo.com', name='foo.com')
+# print (new_site.id)
+# Now set that site ID in your settings.py to SITE_ID
+
+SITE_ID = 1
 
 THIRD_PARTY_APPS = (
 
@@ -148,7 +163,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'victormagallanes2@gmail.com'
-EMAIL_HOST_PASSWORD = '181652981987181652981987'
+EMAIL_HOST_PASSWORD = '5Paralelepipedo'
 
 
 # Configuracion de celery
@@ -183,6 +198,15 @@ CACHES = {
         },
     }
 }
+
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'django_modules.usercustom.backends.EmailAuthBackend'
+)
+
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = False
 
 # comando para correr elegir el settings a usar:
 # python manage.py runserver --settings=mysite.settings.local

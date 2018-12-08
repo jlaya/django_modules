@@ -30,5 +30,6 @@ urlpatterns = [
     url(r'^', include('django_modules.chart.urls')),
     url(r'^', include('django_modules.inlineform.urls')),
     url(r'^', include('django_modules.usercustom.urls')),
+    url(r'^accounts/', include('registration.backends.default.urls')),
 
 ]
